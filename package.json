@@ -1,0 +1,22 @@
+{
+  "name": "typescript-from-zero",
+  "version": "1.0.0",
+  "description": "TypeScript learning from zero to advanced",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "tsc --build --clean"
+  },
+  "keywords": [
+    "typescript",
+    "learning",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
