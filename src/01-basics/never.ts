@@ -1,43 +1,47 @@
-// TypeScript never
+// TypeScript: never type
 
-// 1. Function that never returns
-function throwError(message: string): never {
-    throw new Error(message);
+// 1. Function that always throws an error
+function stopProcess(reason: string): never {
+    throw new Error(reason);
 }
 
-// 2. Infinite loop
 
-function infiniteLoop(): never {
+// 2. Function with an infinite loop
+function keepRunning(): never {
     while (true) {
-                              // function never finishes
+        console.log("Process is still running...");
     }
 }
 
-// 3. Never with switch
 
-type NeverStatus = "success" | "error";
+// 3. never with exhaustive switch
+type PaymentState = "paid" | "pending" | "cancelled";
 
-function checkStatus(status: NeverStatus): string {
-    switch (status) {
-        case "success":
-            return "Success";
+function getPaymentMessage(state: PaymentState): string {
+    switch (state) {
+        case "paid":
+            return "Payment was successful.";
 
-        case "error":
-            return "Error";
+        case "pending":
+            return "Payment is being processed.";
+
+        case "cancelled":
+            return "Payment was cancelled.";
 
         default:
-            return neverReached(status);
+            return handleUnexpectedState(state);
     }
 }
 
-function neverReached(value: never): never {
-    throw new Error(`Unexpected value: ${value}`);
+function handleUnexpectedState(value: never): never {
+    throw new Error(`Unexpected payment state: ${value}`);
 }
 
-console.log(checkStatus("success"));
-console.log(checkStatus("error"));
+console.log(getPaymentMessage("paid"));
+console.log(getPaymentMessage("pending"));
+console.log(getPaymentMessage("cancelled"));
 
 
-// 4. Type of never
-// A never value cannot actually be created normally.
-// It represents something that cannot happen.
+// 4. Understanding never
+// The never type represents a situation that can never happen.
+// A function returning never does not complete normally.
