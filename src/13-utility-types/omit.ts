@@ -14,3 +14,6 @@ const config: PublicServerConfig = {
 };
 
 console.log("Public configuration:", config);
+
+
+export {};
