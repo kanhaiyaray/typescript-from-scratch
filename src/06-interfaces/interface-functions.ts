@@ -12,3 +12,5 @@ const calculateTotal: PriceCalculator = (
 const total = calculateTotal(250, 4);
 
 console.log(total);
+
+export {};

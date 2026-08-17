@@ -1,24 +1,26 @@
 interface PhysicalProduct {
-  name: string;
+  kind: "physical";
   weight: number;
 }
 
 interface DigitalProduct {
-  name: string;
-  fileSize: number;
+  kind: "digital";
+  fileSizeMB: number;
 }
 
-type Product = PhysicalProduct | DigitalProduct;
+type StoreProduct = PhysicalProduct | DigitalProduct;
 
-const physicalItem: Product = {
-  name: "Desk Lamp",
-  weight: 1.8
+const physicalItem: StoreProduct = {
+  kind: "physical",
+  weight: 2.5
 };
 
-const digitalItem: Product = {
-  name: "Design Template",
-  fileSize: 24
+const digitalItem: StoreProduct = {
+  kind: "digital",
+  fileSizeMB: 150
 };
 
-console.log("Physical Product:", physicalItem);
-console.log("Digital Product:", digitalItem);
+console.log("Physical product:", physicalItem);
+console.log("Digital product:", digitalItem);
+
+export {};

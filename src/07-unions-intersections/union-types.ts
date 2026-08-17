@@ -13,3 +13,5 @@ console.log("Result:", result);
 
 result = 200;
 console.log("Result:", result);
+
+export {};

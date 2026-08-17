@@ -53,3 +53,5 @@ console.log(user);
 const fruits: string[] = ["Apple", "Banana"];
 fruits.push("Mango");
 console.log(fruits);
+
+export {};

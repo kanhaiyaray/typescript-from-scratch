@@ -45,3 +45,6 @@ handleResult({
   status: "error",
   message: "Unable to connect to server"
 });
+
+
+export {};

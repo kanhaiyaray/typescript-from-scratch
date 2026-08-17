@@ -10,4 +10,4 @@ const product1: Product1 = {
   price: 2500
 };
 
-console.log("Product:", product);
+console.log("Product:", product1);
